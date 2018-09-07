@@ -2,14 +2,6 @@ require 'curves/triplet'
 
 module Curves
   class Vector < Triplet
-    def *(n)
-      Vector.new(x * n, y * n, z * n)
-    end
-
-    def /(n)
-      Vector.new(x / n, y / n, z / n)
-    end
-
     def magnitude
       @magnitude ||= x * x + y * y + z * z
     end

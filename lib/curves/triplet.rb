@@ -20,6 +20,18 @@ module Curves
       self.class.new(x + triplet.x, y + triplet.y, z + triplet.z)
     end
 
+    def -(triplet)
+      self.class.new(x - triplet.x, y - triplet.y, z - triplet.z)
+    end
+
+    def *(n)
+      self.class.new(x * n, y * n, z * n)
+    end
+
+    def /(n)
+      self.class.new(x / n, y / n, z / n)
+    end
+
     def ==(v)
       self.class == v.class &&
         (v.x - x).abs <= DELTA &&
